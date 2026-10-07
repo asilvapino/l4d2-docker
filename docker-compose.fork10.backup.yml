@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       # Identidad y ubicación
-      HOSTNAME: "[CL] MK Server"
+      HOSTNAME: "Left 4 Dead 2 Server"
       REGION: "2" # 0=Este EEUU, 1=Oeste EEUU, 2=Sudamérica, 3=Europa, 4=Asia, 5=Australia, 6=Medio Oriente, 7=África, 255=Mundo
 
       # Mensaje del día
@@ -14,14 +14,15 @@ services:
       MOTD_CONTENT: "" # Contenido del MOTD
 
       # Grupo de Steam
-      STEAM_GROUP: "46226821" # ID numérico del grupo; 0=desactivado
+      STEAM_GROUP: "0" # ID numérico del grupo; 0=desactivado
       STEAM_GROUP_EXCLUSIVE: "" # Déjalo vacío para desactivar; cualquier valor no vacío lo activa
 
       # Partida
       DEFAULT_MAP: "c14m1_junkyard"
       DEFAULT_MODE: "coop"
       GAME_TYPES: "" # Vacío permite todos; ejemplo: coop,realism,versus,survival
-      PORT: "" # Vacío o 0=asignación automática; fija aquí un puerto si quieres definirlo
+      FORK: "10" # Instancias dentro del contenedor; sus puertos se asignan automáticamente
+      PORT: "" # Ignorado cuando FORK > 0
       LAN: "" # Déjalo vacío para desactivar; cualquier valor no vacío activa LAN
 
       # Administración remota

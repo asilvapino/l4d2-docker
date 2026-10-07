@@ -22,13 +22,13 @@ VOLUME ["/addons", "/cfg"]
 ENV DEFAULT_MAP=$DEFAULT_MAP \
     DEFAULT_MODE="coop" \
     PORT=0 \
-    HOSTNAME="Left4DevOps" \
-    REGION=255 \
+    HOSTNAME="[CL] MK-Server 00" \
+    REGION=2 \
     GAME_ID=$GAME_ID \
     INSTALL_DIR=$INSTALL_DIR \
     STEAM_GROUP=0 \
     HOST_CONTENT="" \
-    MOTD_CONTENT="Play nice, kill zombies" \
+    MOTD_CONTENT="" \
     MOTD=0
 
 ADD entrypoint.sh .
