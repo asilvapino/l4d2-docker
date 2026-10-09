@@ -21,6 +21,7 @@ services:
       DEFAULT_MAP: "c14m1_junkyard"
       DEFAULT_MODE: "coop"
       GAME_TYPES: "" # Vacío permite todos; ejemplo: coop,realism,versus,survival
+      FORK: "10" # Diez instancias con configuraciones server01.cfg a server10.cfg
       PORT: "" # Vacío o 0=asignación automática; fija aquí un puerto si quieres definirlo
       LAN: "" # Déjalo vacío para desactivar; cualquier valor no vacío activa LAN
 
@@ -31,3 +32,17 @@ services:
 
       # Argumentos adicionales de srcds
       EXTRA_ARGS: ""
+
+    volumes:
+      - ../files/l4d2-addons:/addons
+      - ./server01.cfg:/cfg/server01.cfg:ro
+      - ./server02.cfg:/cfg/server02.cfg:ro
+      - ./server03.cfg:/cfg/server03.cfg:ro
+      - ./server04.cfg:/cfg/server04.cfg:ro
+      - ./server05.cfg:/cfg/server05.cfg:ro
+      - ./server06.cfg:/cfg/server06.cfg:ro
+      - ./server07.cfg:/cfg/server07.cfg:ro
+      - ./server08.cfg:/cfg/server08.cfg:ro
+      - ./server09.cfg:/cfg/server09.cfg:ro
+      - ./server10.cfg:/cfg/server10.cfg:ro
+      - ./mapcycle.txt:/cfg/mapcycle.txt:ro
